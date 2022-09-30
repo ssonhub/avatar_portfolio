@@ -63,11 +63,14 @@ class ProjectDetail extends StatelessWidget {
                   const SizedBox(
                     height: 25,
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(15.0),
-                    child: Image.network(
-                      project.imageUrl,
-                      fit: BoxFit.cover,
+                  Hero(
+                    tag: project.name,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(15.0),
+                      child: Image.network(
+                        project.imageUrl,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -82,6 +85,10 @@ class ProjectDetail extends StatelessWidget {
                   ),
                   HorizontalTechView(
                     techList: project.technologiesUsed ?? [],
+
+                    ///Notice how we pass in project.technologiesUsed or [] . The ?? will assign []
+                    ///if the technologies used in that project are null (because we made it nullable),
+                    ///otherwise will pass in the technologies.
                   ),
                   const SizedBox(
                     height: 15,

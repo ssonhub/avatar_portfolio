@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/widgets/cards/project_card.dart';
 import '../../example/projects.dart';
-import '../../widgets/cards/intro_card.dart';
+// import '../../widgets/cards/intro_card.dart';
 import '../../widgets/header/header.dart';
 
 class HomePage extends StatelessWidget {
@@ -41,8 +41,6 @@ class HomePage extends StatelessWidget {
                         itemBuilder: (context, index) {
                           return ProjectCard(project: projects[index]);
                         },
-                          
-                        ],
                       ),
                     )
                   ],

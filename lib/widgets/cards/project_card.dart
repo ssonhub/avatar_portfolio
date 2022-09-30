@@ -5,13 +5,19 @@ import '../../pages/project/project_detail.dart';
 class ProjectCard extends StatelessWidget {
   final Project project;
 
-  const ProjectCard({super.key, required this.project});
+  const ProjectCard({required this.project, super.key});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => Navigator.push(
-          context, MaterialPageRoute(builder: (_) => ProjectDetail())),
+          context,
+          MaterialPageRoute(
+              builder: (_) => ProjectDetail(
+                    project: project,
+                  ))),
+      // Notice the (_) it is bc we don't need to use any of the builder parameters
+      // Because we are now passing a parameter to ProjectDetail we need to update all its calls accordingly. So, go to ProjectCard and add the project parameter inside ProjectDetail when you navigate.
       child: Container(
         width: MediaQuery.of(context).size.width / 1.3,
         height: 350,

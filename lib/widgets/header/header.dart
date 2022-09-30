@@ -26,11 +26,7 @@ class Header extends StatelessWidget {
             )
           ],
         ),
-        const Icon(
-          Icons.account_circle,
-          color: Colors.black,
-          size: 30,
-        )
+        Image.asset("assets/img/avatar.png", height: 45,),
       ],
     );
   }

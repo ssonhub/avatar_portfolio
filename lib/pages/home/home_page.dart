@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/widgets/cards/project_card.dart';
+import 'package:share_plus/share_plus.dart';
 import '../../example/projects.dart';
 // import '../../widgets/cards/intro_card.dart';
 import '../../widgets/header/header.dart';
@@ -14,11 +15,14 @@ class HomePage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.black,
         child: const Icon(
-          Icons.share, color: Colors.white,
+          Icons.share,
+          color: Colors.white,
         ),
-        onPressed: () {
-        print("button pressed");
-      },),
+        onPressed: () async {
+          await Share.share(
+              "Check out Jack's portfolio https://my-portfolio-1eaa0.web.app/#/");
+        },
+      ),
       body: SafeArea(
         child: SizedBox(
             width: MediaQuery.of(context).size.width,
